@@ -1,6 +1,4 @@
 # Compiled Object files
-*.slo
-*.lo
 *.o
 *.obj
 
@@ -9,13 +7,10 @@ build
 
 # Compiled Dynamic libraries
 *.so
-*.dylib
 *.dll
 
 
 # Compiled Static libraries
-*.lai
-*.la
 *.a
 *.lib
 
@@ -27,8 +22,4 @@ build
 # vim temp file
 *.swp
 
-# python
-*.pyc
 
-# vundle plugin directory
-/bundle/
