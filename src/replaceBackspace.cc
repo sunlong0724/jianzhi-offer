@@ -1,4 +1,5 @@
 #include <string>
+#include <string.h>
 #include <iostream>
 
 using std::string;
@@ -16,7 +17,6 @@ void replaceBackspace(string& str){
 	int i = 0;
 	int j = 0;
 	int backspace_count = 0;
-	cout << str << " " << str.size() << endl;
 	while(i < str.size()){
 		if (str[i] == ' ')
 			++backspace_count;
@@ -40,9 +40,26 @@ void replaceBackspace(string& str){
 	cout << str << " " << str.size() << endl;
 }
 
+//not good!!!
+string mergeTwoString(string &str1,string &str2){
+	if (str1.empty()) return str2;
+	if (str2.empty()) return str1;
+
+	int len1 = str1.length();
+	str1.resize(str2.size()+str1.size(), '0');
+
+	strcpy(&(str1[len1]), str2.c_str());
+
+
+	return str1;
+
+}
+
 int main(int argc, char* argv[]){
 
-	string str("We are happy!");	
-	replaceBackspace(str);
+	string str1("We are family!");
+	string str2("We are happy!");	
+	cout << "The merged string is \"" <<	mergeTwoString(str1,str2) << "\"" << endl;
+	replaceBackspace(str1);
 	return 0;
 }
