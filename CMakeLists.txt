@@ -8,3 +8,9 @@ add_executable(findNumberInArrs  src/findNumberInArrs.cc )
 add_executable(replaceBackspace  src/replaceBackspace.cc )
 add_executable(list  src/list.cc )
 
+include_directories(googletest/googletest/include)
+add_executable(main src/main.cc)
+target_link_libraries(main gtest)
+
+
+add_subdirectory(googletest/googletest)
