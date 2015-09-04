@@ -48,8 +48,12 @@ string mergeTwoString(string &str1,string &str2){
 	int len1 = str1.length();
 	str1.resize(str2.size()+str1.size(), '0');
 
-	strcpy(&(str1[len1]), str2.c_str());
-
+//	strcpy(&(str1[len1]), str2.c_str());
+	int i = len1;
+	int j = 0;
+	while(i < str1.length() && j < str2.length()) {
+		str1[i++] = str2[j++];
+	}
 
 	return str1;
 
