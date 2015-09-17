@@ -12,5 +12,6 @@ include_directories(googletest/googletest/include)
 add_executable(main src/main.cc)
 target_link_libraries(main gtest)
 
+add_executable(tree src/tree.cc)
 
 add_subdirectory(googletest/googletest)
