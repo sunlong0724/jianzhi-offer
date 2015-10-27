@@ -15,3 +15,5 @@ target_link_libraries(main gtest)
 add_executable(tree src/tree.cc)
 
 add_subdirectory(googletest/googletest)
+
+add_subdirectory(src/test_sort)
