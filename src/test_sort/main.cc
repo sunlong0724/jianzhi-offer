@@ -80,13 +80,28 @@ void quick_sort(int* arr, int start, int end) {
 }
 
 
+void select_sort(int* arr, int len) {
+	int index;
+	for (int i = 0 ; i < len-1; ++i){
+		index = i;
+		for (int j = i+1; j < len; ++j) {
+			if ( arr[j] < arr[index]) {
+				index = j;
+			}
+		}
+		if (index != i)
+			std::swap(arr[i], arr[index]);
+	}
+}
+
 int main(){
 	int arr[] = {6,23,1,4,5,2,5};
 	print_arr(arr, 	sizeof(arr)/sizeof(int));
 	//insert_sort(arr, sizeof(arr)/sizeof(int));
 	//shell_sort(arr, sizeof(arr)/sizeof(int));
 	//bubble_sort(arr, sizeof(arr)/sizeof(int));
-	quick_sort(arr, 0, sizeof(arr)/sizeof(int)-1);
+	//quick_sort(arr, 0, sizeof(arr)/sizeof(int)-1);
+	select_sort(arr, sizeof(arr)/sizeof(int));
 	print_arr(arr, 	sizeof(arr)/sizeof(int));
 	cout << "main " << endl;
 }
